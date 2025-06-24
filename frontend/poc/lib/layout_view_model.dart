@@ -1,8 +1,8 @@
 import 'package:rxdart/rxdart.dart';
 
 final Map<String, List<String>> fleetData = {
-  'infrastructure': ['Tx', 'Aem 470'],
-  'cargo': ['Tx', 'Aem 470'],
+  'infrastructure': ['XTas', 'Aem 940'],
+  'cargo': ['XTas', 'Aem 940'],
 };
 
 class LayoutViewModel {

@@ -38,6 +38,8 @@ dependencies:
   sbb_design_system_mobile: ^3.2.0
   auto_route: ^10.1.0+1
   rxdart: ^0.28.0
+  equatable: ^2.0.7
+  fl_chart: ^1.0.0
 
 dev_dependencies:
   flutter_test:

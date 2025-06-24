@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sbb_design_system_mobile/sbb_design_system_mobile.dart';
 
 class Search extends StatelessWidget {
   const Search({
@@ -7,6 +8,6 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const TextField();
+    return Container(height: 200, color: SBBColors.storm, child: const Text('Search'));
   }
 }
