@@ -1,23 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:poc/flotte_dashboard/pages/flotte_page.dart';
+import 'package:poc/fleets_dashboard/pages/fleet_page.dart';
 import 'package:poc/layout_page.dart';
+
+import 'fahrzeug_dashboard/pages/vehicle_page.dart';
 
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
-class AppRouter {
-  @override
-  RouteType get defaultRouteType => const RouteType.adaptive();
-
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: LayoutRoute.page,
           path: '/',
+          page: LayoutRoute.page,
           initial: true,
           children: [
-            AutoRoute(page: FlotteRoute.page, path: 'flotte', initial: true),
+            AutoRoute(
+              path: ':category/fleets/:fleetName',
+              page: FleetRoute.page,
+              children: [
+                AutoRoute(
+                  path: ':uicNumber',
+                  page: VehicleRoute.page,
+                ),
+              ],
+            ),
           ],
         ),
       ];

@@ -9,8 +9,7 @@
       "request": "launch",
       "deviceId": "",
       "type": "dart",
-      "program": "frontend/poc/lib/main.dart",
-      "args": ["--flavor", "flavorDev"]
+      "program": "frontend/poc/lib/main.dart"
     }
   ]
 }
