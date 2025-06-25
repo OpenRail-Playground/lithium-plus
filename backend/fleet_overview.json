@@ -1,0 +1,36 @@
+{
+    "Infrastructure": {
+        "fleet_overview": [
+            {
+                "fleet_id": "Tafag XTas",
+                "vehicle_ids": [
+                    "99 85 9236 025-4",
+                    "99 85 9236 026-2",
+                    "99 85 9236 024-7",
+                    "99 85 9236 027-0"
+                ],
+                "previous_data": {
+                    "period_in_days": 7,
+                    "activity_status": {
+                        "Utilization": 0.03673595789933283,
+                        "Malfunction": 0.0,
+                        "Idle": 0.6487444719720299,
+                        "Charging": 0.005968368268375214,
+                        "Signal absent": 0.308551201860262,
+                        "Invalid": 0.0
+                    }
+                },
+                "current_state": {
+                    "state_of_health": 96.34350769915211,
+                    "availability": {
+                        "99 85 9236 025-4": "Available",
+                        "99 85 9236 026-2": "Available",
+                        "99 85 9236 024-7": "Available",
+                        "99 85 9236 027-0": "Available"
+                    },
+                    "percentage_of_available_vehicles": 100
+                }
+            }
+        ]
+    }
+}
