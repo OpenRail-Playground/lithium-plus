@@ -73,7 +73,7 @@ class OperationTime extends StatelessWidget {
     String text;
 
     if (index >= 0 && index <= 31) {
-      text = '${index + 1}'; // Convert the index to a string
+      text = '${index + 1}';
     } else {
       text = '';
     }
@@ -119,17 +119,15 @@ class OperationTime extends StatelessWidget {
       );
 
   List<BarChartGroupData> get barGroups {
-    // Define your xList
     List<int> xList = List.generate(31, (index) => index);
     Random random = Random();
 
-    // Generate BarChartGroupData based on xList and random toY values
     List<BarChartGroupData> groups = xList.map((x) {
       return BarChartGroupData(
         x: x,
         barRods: [
           BarChartRodData(
-            toY: random.nextInt(21).toDouble(), // Random number between 0 and 20
+            toY: random.nextInt(21).toDouble(),
             gradient: _barsGradient,
           )
         ],

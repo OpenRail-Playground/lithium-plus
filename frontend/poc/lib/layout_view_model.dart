@@ -7,10 +7,10 @@ final Map<String, List<String>> fleetData = {
 
 class LayoutViewModel {
   final BehaviorSubject<Set<String>> _expandedSubject = BehaviorSubject.seeded({});
-  final BehaviorSubject<String?> _selectedFleetSubject = BehaviorSubject.seeded(null); // Track selected fleet
+  final BehaviorSubject<String?> _selectedFleetSubject = BehaviorSubject.seeded(null);
 
   Stream<Set<String>> get expandedStream => _expandedSubject.stream;
-  Stream<String?> get selectedFleetStream => _selectedFleetSubject.stream; // Stream for selected fleet
+  Stream<String?> get selectedFleetStream => _selectedFleetSubject.stream;
 
   Set<String> get _expanded => _expandedSubject.value;
 
@@ -36,11 +36,11 @@ class LayoutViewModel {
   }
 
   void selectFleet(String fleet) {
-    _selectedFleetSubject.add(fleet); // Update selected fleet
+    _selectedFleetSubject.add(fleet);
   }
 
   void dispose() {
     _expandedSubject.close();
-    _selectedFleetSubject.close(); // Dispose the selected fleet subject
+    _selectedFleetSubject.close();
   }
 }
