@@ -1,0 +1,25 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "dart.lineLength": 120,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "quickfix.add.const": "explicit"
+  },
+  "html.format.enable": false,
+  "draw.folder.structure.exclude": [
+    "**/node_modules",
+    "**/*.git",
+    "**/dist",
+    "**/*.next",
+    "**/out",
+    "**/.DS_Store",
+    "**/*.freezed.dart",
+    "**/*.g.dart"
+  ],
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "prettier.trailingComma": "none"
+}
