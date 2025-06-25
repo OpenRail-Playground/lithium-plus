@@ -40,6 +40,7 @@ dependencies:
   rxdart: ^0.28.0
   equatable: ^2.0.7
   fl_chart: ^1.0.0
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
@@ -53,10 +54,14 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.5.4
   auto_route_generator: ^10.1.0
+  json_serializable: ^6.9.5
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+  # For information on the generic Dart part of this file, see the
+  # following page: https://dart.dev/tools/pub/pubspec
 
+  # Add assets to this application
+assets:
+  - assets/mock_data/
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is
