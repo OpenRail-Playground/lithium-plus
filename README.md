@@ -6,7 +6,7 @@
 
 <p align="center">
   <img alt="Hack4Rail Logo" src="img/hack4rail-logo.jpg" width="220"/>
-  <img alt="Lithium+" src="img/lithium_plus" width="220"/>
+  <img alt="Lithium+" src="img/lithium_plus.png" width="220"/>
 </p>
 
 This project has been initiated during the [Hack4Rail 2025](https://hack4rail.event.sbb.ch/en/), a joint hackathon organised by the railway companies SBB, ÖBB, and DB in partnership with the OpenRail Association.
