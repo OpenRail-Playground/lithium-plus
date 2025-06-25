@@ -15,14 +15,23 @@ class AppRouter extends RootStackRouter {
           path: '/',
           page: LayoutRoute.page,
           initial: true,
+          type: RouteType.custom(
+            transitionsBuilder: TransitionsBuilders.noTransition,
+          ),
           children: [
             AutoRoute(
               path: ':category/fleets/:fleetName',
               page: FleetRoute.page,
+              type: RouteType.custom(
+                transitionsBuilder: TransitionsBuilders.slideRightWithFade,
+              ),
               children: [
                 AutoRoute(
                   path: ':uicNumber',
                   page: VehicleRoute.page,
+                  type: RouteType.custom(
+                    transitionsBuilder: TransitionsBuilders.fadeIn,
+                  ),
                 ),
               ],
             ),

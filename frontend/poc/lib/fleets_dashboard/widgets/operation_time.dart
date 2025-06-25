@@ -16,7 +16,7 @@ class OperationTime extends StatelessWidget {
           height: 80,
           child: const Text(
             'Betriebsdauer',
-            style: SBBTextStyles.extraExtraLargeBold,
+            style: SBBTextStyles.largeBold,
           ),
         ),
         AspectRatio(

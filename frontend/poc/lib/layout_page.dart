@@ -71,17 +71,24 @@ class LayoutPage extends StatelessWidget {
           selectedTileColor: SBBColors.white,
           onTap: () {
             viewModel.toggleCategory(category);
-            context.pushRoute(FleetRoute(category: category, fleetName: fleets.first));
           },
         ),
         if (isExpanded)
           ...fleets.map(
             (fleet) => Padding(
               padding: const EdgeInsets.only(left: 16.0),
-              child: ListTile(
-                title: Text(fleet),
-                onTap: () {
-                  context.pushRoute(FleetRoute(category: category, fleetName: fleet));
+              child: StreamBuilder<String?>(
+                stream: viewModel.selectedFleetStream,
+                builder: (context, snapshot) {
+                  final isSelected = snapshot.data == fleet;
+                  return ListTile(
+                    title: Text(fleet),
+                    selected: isSelected,
+                    onTap: () {
+                      viewModel.selectFleet(fleet);
+                      context.pushRoute(FleetRoute(category: category, fleetName: fleet));
+                    },
+                  );
                 },
               ),
             ),

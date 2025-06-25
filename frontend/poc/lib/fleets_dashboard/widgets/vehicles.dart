@@ -14,42 +14,50 @@ class Vehicles extends StatelessWidget {
   final String category;
 
   final List<Vehicle> vehicles = [
-    const Vehicle(
-      uicNumber: '99 85 9236 023-9',
-      soh: 95,
-    ),
-    const Vehicle(
-      uicNumber: '99 85 9236 024-7',
-      soh: 60,
-    ),
-    const Vehicle(
-      uicNumber: '99 85 9236 025-4',
-      soh: 93,
-    ),
+    const Vehicle(uicNumber: '99 85 9236 023-9', soh: 95),
+    const Vehicle(uicNumber: '99 85 9236 024-7', soh: 60),
+    const Vehicle(uicNumber: '99 85 9236 025-4', soh: 93),
+    const Vehicle(uicNumber: '99 85 9236 026-2', soh: null),
   ];
 
   @override
   Widget build(BuildContext context) {
+    const itemWidth = 160;
+    const itemSpacing = 12.0;
+    final double totalWidth = (vehicles.length) * itemWidth + ((vehicles.length) * itemSpacing) + 60 + 70;
+
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-            padding: const EdgeInsets.symmetric(vertical: sbbDefaultSpacing),
-            height: 80,
-            child: const Text(
-              'Verfügbarkeit',
-              style: SBBTextStyles.extraExtraLargeBold,
-            )),
-        Container(
-          height: 150,
-          width: 500,
-          color: SBBColors.silver,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: vehicles.length,
-            itemBuilder: (context, index) {
-              final vehicle = vehicles[index];
-              return VehicleItem(vehicle: vehicle);
-            },
+        const SizedBox(height: sbbDefaultSpacing),
+        const Text(
+          'Flotten Dashboard',
+          style: SBBTextStyles.extraLargeBold,
+        ),
+        const SizedBox(height: sbbDefaultSpacing),
+        Align(
+          alignment: Alignment.center,
+          child: Container(
+            width: totalWidth,
+            padding: const EdgeInsets.all(sbbDefaultSpacing),
+            decoration: BoxDecoration(
+              color: SBBColors.silver,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: SBBColors.graphite.withOpacity(0.2)),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(fleetName, style: SBBTextStyles.mediumBold),
+                const SizedBox(width: 12),
+                ...vehicles.map((vehicle) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: VehicleItem(vehicle: vehicle),
+                  );
+                }).toList(),
+              ],
+            ),
           ),
         ),
       ],

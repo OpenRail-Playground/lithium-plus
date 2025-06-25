@@ -12,6 +12,7 @@ class WebApp extends StatelessWidget {
       title: 'Flotte Dashboard',
       theme: ThemeData(primarySwatch: Colors.indigo),
       routerConfig: appRouter.config(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

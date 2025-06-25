@@ -1,14 +1,17 @@
 import 'package:rxdart/rxdart.dart';
 
 final Map<String, List<String>> fleetData = {
-  'infrastructure': ['XTas', 'Aem 940'],
-  'cargo': ['XTas', 'Aem 940'],
+  'infrastructure': ['Tafag XTas', 'Aem 940'],
+  'cargo': ['Tafag XTas', 'Aem 940'],
 };
 
 class LayoutViewModel {
   final BehaviorSubject<Set<String>> _expandedSubject = BehaviorSubject.seeded({});
+  final BehaviorSubject<String?> _selectedFleetSubject = BehaviorSubject.seeded(null); // Track selected fleet
 
   Stream<Set<String>> get expandedStream => _expandedSubject.stream;
+  Stream<String?> get selectedFleetStream => _selectedFleetSubject.stream; // Stream for selected fleet
+
   Set<String> get _expanded => _expandedSubject.value;
 
   void toggleCategory(String category) {
@@ -32,7 +35,12 @@ class LayoutViewModel {
     }
   }
 
+  void selectFleet(String fleet) {
+    _selectedFleetSubject.add(fleet); // Update selected fleet
+  }
+
   void dispose() {
     _expandedSubject.close();
+    _selectedFleetSubject.close(); // Dispose the selected fleet subject
   }
 }

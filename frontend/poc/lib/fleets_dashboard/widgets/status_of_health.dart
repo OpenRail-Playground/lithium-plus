@@ -32,8 +32,8 @@ class StatusOfHealth extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: sbbDefaultSpacing),
           height: 80,
           child: const Text(
-            'Batteriezustand(SoH gesamt)',
-            style: SBBTextStyles.extraExtraLargeBold,
+            'Batteriezustand (SoH gesamt) [%]',
+            style: SBBTextStyles.largeBold,
           ),
         ),
         Padding(
@@ -51,11 +51,14 @@ class StatusOfHealth extends StatelessWidget {
               FractionallySizedBox(
                 alignment: Alignment.centerLeft,
                 widthFactor: healthRatio,
-                child: Container(
-                  height: barHeight,
-                  decoration: BoxDecoration(
-                    color: getBarColor(clampedPercent),
-                    borderRadius: BorderRadius.circular(10),
+                child: Padding(
+                  padding: const EdgeInsets.all(1),
+                  child: Container(
+                    height: barHeight - 2,
+                    decoration: BoxDecoration(
+                      color: getBarColor(clampedPercent),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                 ),
               ),
@@ -78,9 +81,9 @@ class StatusOfHealth extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              LegendItem(color: SBBColors.red, label: '<70'),
-              LegendItem(color: SBBColors.lemon, label: '70<= X <85'),
-              LegendItem(color: SBBColors.green, label: '>=85')
+              LegendItem(color: SBBColors.red, label: ' [0-70]'),
+              LegendItem(color: SBBColors.lemon, label: ' [71-85]'),
+              LegendItem(color: SBBColors.green, label: ' [86-100]'),
             ],
           ),
         ),
