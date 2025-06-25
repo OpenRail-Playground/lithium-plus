@@ -11,29 +11,24 @@ class ActivityStatus(StrEnum):
     signal_absent = "Signal absent"
     invalid = "Invalid"
 
-class VehicleStatus(StrEnum):
-    available = "Available"
-    error_status = "Error Status"
-    no_connection = "No Connection"
-
-@dataclass
-class CurrentStatus:
-    state_of_health: float = 0.8 # average over vehicles that are available
-    availability : dict[str, int] = field(default_factory=dict) # per vehicle the state: green ( no error message, message received), red (error message) , grey no connection
-    percentage_of_available_vehicles: float = 0.0
 
 @dataclass
 class HistoricalData:
     period_in_days: int #
     activity_status: dict[ActivityStatus, float]  # for example ActivityStatus.Auslasting = 0.20
 
+@dataclass
+class Vehicle:
+    id: str
+    previous_data: HistoricalData
+    last_soh: float
 
 @dataclass
 class Fleet:
     fleet_id: str
-    vehicle_ids : list[str]
+    vehicles : list[Vehicle]
     previous_data: HistoricalData
-    current_state: CurrentStatus
+    last_soh: float
 
 @dataclass
 class RollingStock:
