@@ -1,0 +1,83 @@
+{
+    "Infrastructure": {
+        "fleet_overview": [
+            {
+                "fleet_id": "Tafag XTas",
+                "vehicles": [
+                    {
+                        "id": "99 85 9236 026-2",
+                        "previous_data": {
+                            "period_in_days": 7,
+                            "activity_status": {
+                                "Utilization": 0.0761064962868873,
+                                "Malfunction": 0.0,
+                                "Idle": 0.889344408593988,
+                                "Charging": 0.0,
+                                "Signal absent": 0.03454909511912469,
+                                "Invalid": 0.0
+                            }
+                        },
+                        "last_soh": 96.3
+                    },
+                    {
+                        "id": "99 85 9236 025-4",
+                        "previous_data": {
+                            "period_in_days": 7,
+                            "activity_status": {
+                                "Utilization": 0.04130744326560491,
+                                "Malfunction": 0.0,
+                                "Idle": 0.9237532227693201,
+                                "Charging": 0.0003455928762864347,
+                                "Signal absent": 0.03459374108878849,
+                                "Invalid": 0.0
+                            }
+                        },
+                        "last_soh": 96.5
+                    },
+                    {
+                        "id": "99 85 9236 024-7",
+                        "previous_data": {
+                            "period_in_days": 7,
+                            "activity_status": {
+                                "Utilization": 0.08492820918156735,
+                                "Malfunction": 0.0,
+                                "Idle": 0.6847104334171868,
+                                "Charging": 0.02340606298485399,
+                                "Signal absent": 0.20695529441639182,
+                                "Invalid": 0.0
+                            }
+                        },
+                        "last_soh": 96.1
+                    },
+                    {
+                        "id": "99 85 9236 027-0",
+                        "previous_data": {
+                            "period_in_days": 7,
+                            "activity_status": {
+                                "Utilization": 0.013840250595777315,
+                                "Malfunction": 0.0,
+                                "Idle": 0.00013228435455940086,
+                                "Charging": 4.960663295977532e-06,
+                                "Signal absent": 0.9860225043863673,
+                                "Invalid": 0.0
+                            }
+                        },
+                        "last_soh": 96.4
+                    }
+                ],
+                "previous_data": {
+                    "period_in_days": 7,
+                    "activity_status": {
+                        "Utilization": 0.05404559983245922,
+                        "Malfunction": 0.0,
+                        "Idle": 0.6244850872837636,
+                        "Charging": 0.0059391541311091004,
+                        "Signal absent": 0.3155301587526681,
+                        "Invalid": 0.0
+                    }
+                },
+                "last_soh": 96.32499999999999
+            }
+        ]
+    }
+}

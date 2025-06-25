@@ -1,0 +1,93 @@
+[tool.poetry]
+name = "lithium-plus-backend"
+version = "0.0.0" # Version is ignored and set by jenkins. Use pipeline to increase.
+description = "Example project for Python"
+authors = []
+repository = "https://github.com/OpenRail-Playground/lithium-plus"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+snowflake-snowpark-python = {extras = ["pandas"], version = "1.24.0" }
+azure-storage-blob = "12.23.1"
+azure-identity = "1.19.0"
+sqlalchemy = "2.0.36"
+kafka-python = "^2.0.2"
+numpy = "^2.1.3"
+snowflake = "1.5.1"
+
+[tool.poetry.dev-dependencies]
+black = "^24.0.0"
+coverage = {extras = ["toml"], version = "^7.0.0"}
+unittest-xml-reporting = "^3.2.0"
+pre-commit = "^4.0.1"
+pre-commit-hooks = "^5.0.0"
+pydocstyle = "^6.1.1"
+pylint = "^3.0.0"
+reorder-python-imports = "^3.1.0"
+isort = "^5.12.0"
+pytest = "^8.0.0"
+pytest-dotenv = "^0.5.2"
+azure-core = "1.32.0"
+
+[[tool.poetry.source]]
+name = "eap-bsa"
+url = "https://bin.sbb.ch/artifactory/api/pypi/eap-bsa.pypi/simple/"
+priority = 'supplemental'
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.main]
+fail-on = "F,E,W"
+fail-under = 0.0
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "n", "s", "d", "ex", "Run", "_", "pk", "x", "y", "df"]
+
+[tool.pylint.format]
+max-line-length = 140
+
+[tool.pylint.design]
+max-args = 8
+
+[tool.pylint.messages_control]
+disable = [
+    # pydocstyle takes care of this...
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "missing-class-docstring",
+    "broad-exception-caught",
+
+    # don't hinder me creating small classes!
+    "too-few-public-methods",
+
+    # reorder-python-imports should know what it's doing
+    "wrong-import-order",
+
+    # can't do much about duplicate imports in two files, I'm afraid...
+    "duplicate-code",
+]
+
+[tool.pylint.miscellaneous]
+notes = []  # don't warn about `TODO` and `FIXME` comments
+
+[tool.pylint.reports]
+output-format = "parseable:pylintout,text"
+
+[tool.pydocstyle]
+match-dir = "[^\\.][^test].*"
+convention = "google"
+
+[tool.pytest.ini_options]
+env_files = "credentials.env"
+pythonpath = [".", "src", "tests"]
+
+[tool.coverage.run]
+command_line = "-m xmlrunner discover --output-file junittest.xml"
+
+[tool.black]
+# set enforced line brake at 100 characters (also intellij standard) to improve code readability (default is 79)
+line-length = 100
